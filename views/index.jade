@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(ng-controller='index')
+    h1.blue color trends in music artworks
+    p extracted via offiziellecharts.de > spotify web API > color-tief (npm)
+    .nav
+      button(ng-click="details = !details" ng-class="{ 'active': details }") details
+      button(ng-click="colors = !colors" ng-class="{ 'active': colors }") colors
+      button(ng-click="empty = !empty" ng-class="{ 'active': empty }") empty
+    ul
+      li(ng-repeat="item in items" ng-class="{ 'li-min': !details }" ng-if="item.spotify || empty")
+        .colors(ng-if="item.colors && colors")
+          //.color(ng-repeat="color in item.colors")
+          .color(ng-repeat="color in item.colors" style="background-color:rgb({{ color[0] }},{{ color[1] }},{{ color[2] }})")
+        .artwork
+          img(ng-if="item.spotify" src="{{ item.spotify.images[item.spotify.images.length-1].url }}")
+        .meta(ng-if="details")
+          p
+            b {{ item.artist }}
+          p {{ item.title }}
+          p.blue {{ item.year }}
+        
+  

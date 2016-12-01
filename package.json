@@ -1,0 +1,25 @@
+{
+  "name": "artwork-trend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "color-thief": "^2.2.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "es6-promise": "^3.1.2",
+    "express": "~4.14.0",
+    "fs": "0.0.1-security",
+    "jade": "~1.11.0",
+    "mongoose": "^4.7.0",
+    "morgan": "~1.7.0",
+    "nightmare": "^2.8.1",
+    "q": "^1.4.1",
+    "serve-favicon": "~2.3.0",
+    "spotify-web-api-node": "^2.3.6",
+    "vo": "^4.0.2"
+  }
+}
